@@ -106,3 +106,18 @@ bool Core::start()
 {
     return _p->start();
 }
+
+bool Core::cancel()
+{
+    return _p->cancel();
+}
+
+bool Core::pause()
+{
+    return _p->pause();
+}
+
+bool Core::resume()
+{
+    return _p->resume();
+}

@@ -177,6 +177,33 @@ bool CorePrivate::start()
     return true;
 }
 
+bool CorePrivate::cancel()
+{
+    if(_futureWatcher.isNull()) return false;
+    if(!isRunning() || !isPaused()) return false;
+
+    _futureWatcher->cancel();
+    return true;
+}
+
+bool CorePrivate::pause()
+{
+    if(_futureWatcher.isNull()) return false;
+    if(!isRunning()) return false;
+
+    _futureWatcher->pause();
+    return true;
+}
+
+bool CorePrivate::resume()
+{
+    if(_futureWatcher.isNull()) return false;
+    if(!isPaused()) return false;
+
+    _futureWatcher->resume();
+    return true;
+}
+
 bool CorePrivate::isSupportedImage(const QString &path) const
 {
     QFileInfo fi(path);

@@ -40,6 +40,9 @@ namespace FaceDetector
 
     public slots:
         bool start();
+        bool cancel();
+        bool pause();
+        bool resume();
 
     signals:
         void finished();
